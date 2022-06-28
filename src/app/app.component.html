@@ -1,0 +1,64 @@
+<div *ngIf="view">
+  <table class="table table-bordered table-sm">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>TITLE</th>
+        <th>FIRST NAME </th>
+        <th>LAST NAME </th>
+        <th>PICTURE</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="view">
+      <tr *ngFor="let v of view.data">
+        <td>{{v.id}}</td>
+        <td>{{v.title}}</td>
+        <td>{{v.firstName}}</td>
+        <td>{{v.lastName}}</td>
+        <td>{{v.picture}}</td>
+        <td>
+          <div><button (click)="getUserId(v.id)" class="btn btn-dark">Full Users</button></div>
+        </td>
+        <td>
+          <div><button (click)="updateUser(v.id)" class="btn btn-warning">Update Users</button></div>
+        </td>
+        <td>
+          <div><button (click)="deleteUser(v.id)" class="btn btn-danger">Delete Users</button></div>
+        </td>
+
+      </tr>
+      <tr>
+        <td>TOTAL:</td>
+        <td>{{view.total}}</td>
+      </tr>
+      <tr>
+        <td>PAGE:</td>
+        <td>{{view.page}}</td>
+      </tr>
+      <tr>
+        <td>LIMIT:</td>
+        <td>{{view.limit}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="viewid" class="btn btn-primary">
+  {{viewid|json}}
+  <!-- <div *ngFor="let v of viewid.data" class="btn btn-primary">
+    id:{{v.id}}
+    title:{{v.title}}
+    firstName:{{v.firstName}}
+    lastName:{{v.lastName}}
+    gender:{{v.gender}}
+    email:{{v.email}}
+    dateOfBirth:{{v.dateOfBirth}}
+    registerDate:{{v.registerDate}}
+    phone:{{v.phone}}
+    picture:{{v.picture}}
+    location:{{v.location}}
+  </div> -->
+</div>
+
+<div>
+  <button (click)="createUser()" class="btn btn-success">Create Users</button>
+</div>
