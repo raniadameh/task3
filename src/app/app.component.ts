@@ -11,7 +11,7 @@ import { UsersService } from './services/users.service';
 export class AppComponent implements OnInit {
   title = 'task3';
   view!: List<UserPreview>;
-  viewid!: List<UserFull>;
+  viewid!: UserFull;
   c = 500;
   countF!: string;
   countL!: string;
@@ -52,13 +52,13 @@ export class AppComponent implements OnInit {
   }
   updateUser(id: string) {
     const newAccount = {
-      firstName: "updated firstName " ,
+      firstName: "updated firstName ",
       lastName: "updated lastName ",
     };
     this.usersService.updateUser(id, newAccount).subscribe(response => {
       console.log(response),
         this.getUsers()
-       // this.getUserId(id)
+      // this.getUserId(id)
     });
   }
   deleteUser(id: string) {

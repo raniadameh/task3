@@ -20,8 +20,8 @@ export class UsersService {
       params: { created: 1 }
     });
   }
-  getUserId(id: string): Observable<List<UserFull>> {
-    return this.http.get<List<UserFull>>(`${this.baseURL}/user/${id}`, {
+  getUserId(id: string): Observable<UserFull> {
+    return this.http.get<UserFull>(`${this.baseURL}/user/${id}`, {
       ...this.options
     });
   }
@@ -34,7 +34,7 @@ export class UsersService {
     return this.http.delete<any>(`${this.baseURL}/user/${id}`, this.options);
   }
   updateUser(id: string, newUser: any): Observable<UserFull> {
-    return this.http.put<UserFull>(`${this.baseURL}/user/${id}`,newUser, this.options);
+    return this.http.put<UserFull>(`${this.baseURL}/user/${id}`, newUser, this.options);
   }
   fullUser(id: string): Observable<List<UserFull>> {
     return this.http.get<List<UserFull>>(`${this.baseURL}/user/${id}`, {

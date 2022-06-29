@@ -25,7 +25,6 @@
         <td>
           <div><button (click)="deleteUser(v.id)" class="btn btn-danger">Delete Users</button></div>
         </td>
-
       </tr>
       <tr>
         <td>TOTAL:</td>
@@ -42,23 +41,23 @@
     </tbody>
   </table>
 </div>
-<div *ngIf="viewid" class="btn btn-primary">
-  {{viewid|json}}
-  <!-- <div *ngFor="let v of viewid.data" class="btn btn-primary">
-    id:{{v.id}}
-    title:{{v.title}}
-    firstName:{{v.firstName}}
-    lastName:{{v.lastName}}
-    gender:{{v.gender}}
-    email:{{v.email}}
-    dateOfBirth:{{v.dateOfBirth}}
-    registerDate:{{v.registerDate}}
-    phone:{{v.phone}}
-    picture:{{v.picture}}
-    location:{{v.location}}
-  </div> -->
-</div>
 
+<div *ngIf="viewid" class="m-5 p-5 bg-primary">
+  <!-- {{viewid|json}} -->
+
+  id:{{viewid.id}}<br>
+  title:{{viewid.title}}<br>
+  firstName:{{viewid.firstName}}<br>
+  lastName:{{viewid.lastName}}<br>
+  gender:{{viewid.gender}}<br>
+  email:{{viewid.email}}<br>
+  dateOfBirth:{{viewid.dateOfBirth}}<br>
+  registerDate:{{viewid.registerDate}}<br>
+  phone:{{viewid.phone}}<br>
+  picture:{{viewid.picture}}<br>
+  location:{{viewid.location}}<br>
+
+</div>
 <div>
   <button (click)="createUser()" class="btn btn-success">Create Users</button>
 </div>
